@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated ASCII Bong</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #00ff00;
+            font-family: monospace;
+            white-space: pre;
+            text-align: center;
+            padding: 20px;
+        }
+        #ascii-container {
+            font-size: 16px;
+            line-height: 1.2;
+        }
+    </style>
+</head>
+<body>
+    <h1>ASCII Bong Animation</h1>
+    <div id="ascii-container"></div>
+
+    <script>
+        const frames = [
+            `
+      #~~
+     )#(
+    ( # )  BONG
+     ___
+    |   |
+    |   |
+    |   |
+    |   |
+    |   |
+ ___ |   |
+ \\  \\|   |
+  \\  |   |
+   \\-------\\
+    (_______)
+     \\_____/   BONG
+            `,
+            `
+      #
+     )#~~
+    ( # )  BONG
+     ___
+    |   |
+    |   |
+    |   |
+    |   |
+    |   |
+ ___ |   |
+ \\  \\|   |
+  \\  |   |
+   \\-------\\
+    (_______)
+     \\_____/   BONG
+            `,
+            `
+      ~
+     )#
+    ( # )  BONG
+     ___
+    |   |
+    |   |
+    |   |
+    |   |
+    |   |
+ ___ |   |
+ \\  \\|   |
+  \\  |   |
+   \\-------\\
+    (_______)
+     \\_____/   BONG
+            `,
+            `
+     ~~~
+    ) # 
+   (  # )  BONG
+    ___
+   |   |
+   |   |
+   |   |
+   |   |
+   |   |
+___|   |
+\\  \\|   |
+ \\  |   |
+  \\-------\\
+   (_______)
+    \\_____/   BONG
+            `
+        ];
+
+        let currentFrame = 0;
+
+        function animate() {
+            const container = document.getElementById('ascii-container');
+            container.textContent = frames[currentFrame];
+            currentFrame = (currentFrame + 1) % frames.length;
+            setTimeout(animate, 300); // Adjust the speed of the animation
+        }
+
+        animate();
+    </script>
+</body>
+</html>
